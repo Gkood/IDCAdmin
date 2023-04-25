@@ -45,11 +45,14 @@
     const weizhi = ref()
     const isLock = ref(true)
 
+    const emit = defineEmits(['on-sel-wz'])
+
     //科室选项
     const options_weizhi: any = props.department.data
     //选择科室
-    function storagelocal() {
+    function storagelocal(obj:any) {
         localStorage.setItem(props.department.localField, weizhi.value);
+        emit('on-sel-wz',obj)
     }
     //读取本地科室
     function getLocal() {

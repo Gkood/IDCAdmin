@@ -14,3 +14,4 @@ export const sendmail_post = (data: any) => request({url: 'http://172.16.8.18:78
 export const backDate_post = (data: any) => request({url: 'http://172.16.8.18:6820/conex/backDate', method: 'post', data})
 export const comeBackWork_post = (data: any) => request({url: 'http://172.16.8.18:6820/conex/comeBackWork', method: 'post', data})
 export const batch_post = (data: any) => request({url: 'http://172.16.8.18:6820/conex/batch', method: 'post', data})
+export const fqcSelect_post = (data: any) => request({url: 'http://172.16.8.18:6820/conex/fqcSelect', method: 'post', data})

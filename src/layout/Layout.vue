@@ -5,7 +5,9 @@
             <div class="l-back" v-if="tool.show">
                 <el-button icon="el-icon-back" v-if="tool.backShow" @click="back">{{$t('10060')}}</el-button>
                 <div class="l-tool">
-                    <Department v-if="tool.department.data.length" :department="tool.department"></Department>
+                    <Department v-if="tool.department.data.length"
+                                :department="tool.department"
+                                @on-sel-wz="onSelWz"></Department>
                 </div>
             </div>
             <div class="l-main">
@@ -45,17 +47,21 @@
                 show: false,
                 backShow: true,
                 department: {
-                    data:[],
+                    data: [],
                     localField: ''
                 }
             })
         }
     })
 
-    const emit = defineEmits(['on-back'])
+    const emit = defineEmits(['on-back', 'on-sel-wz'])
 
     function back() {
         emit('on-back')
+    }
+
+    function onSelWz(obj:any) {
+        emit('on-sel-wz',obj)
     }
 </script>
 

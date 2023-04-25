@@ -23,7 +23,6 @@ const router = new VueRouter({
     {path: '/import', name: 'import', component: Import},
     {path: '/reporWork', name: 'reporWork', component: ReporWork},
     {path: '/material', name: 'material', component: Material},
-    {path: '/material', name: 'material', component: Material},
     {path: '/fqc', name: 'fqc', component: Fqc},
     {path: '/routing', name: 'routing', component: Routing},
     // {

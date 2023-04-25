@@ -1,12 +1,16 @@
 <template>
-    <Layout :header="header" :footer="footer" :tool="hTool" @on-back="back">
+    <Layout :header="header"
+            :footer="footer"
+            :tool="hTool"
+            @on-back="back"
+            @on-sel-wz="onSelWz">
         <div class="fqc">
             <div class="op scrollBar">
                 <div class="op-form">
                     <el-form ref="RefFormSearch"
                              :model="formSearch"
                              label-width="110px">
-                        <el-form-item class="ml">
+                        <el-form-item label-width="70px">
                             <el-switch
                                     v-model="formSearch.changeText"
                                     :active-text="$t('10123')"
@@ -18,17 +22,31 @@
                                       :placeholder="$t('10312')"
                                       @keyup.enter.native="searchFor"></el-input>
                         </el-form-item>
-                        <el-form-item>
-                            <el-button @click="searchFor" type="primary">{{$t('10043')}}</el-button>
+                        <el-form-item label-width="40px">
+                            <el-button @click="selectFqcOrder" type="primary">{{$t('10043')}}</el-button>
+                            <el-button @click="reset" type="info">{{$t('10124')}}</el-button>
                         </el-form-item>
                     </el-form>
                 </div>
                 <div class="op-tab">
-
+                    <el-tabs type="card"
+                             stretch
+                             v-loading="orderLoad">
+                        <el-tab-pane :label="$t('10056')+'（'+fqcNumber.length+'）'" name="0">
+                            <div class="op-tab-list">
+                                <div v-for="item in fqcNumber"
+                                     :key="item.序号"
+                                     :class="['op-tab-items','primary',item.FQC单号==nowForm.FQC单号?'cur':null]"
+                                     @click="intoDrawing(item)">
+                                    {{ $t('10279')+": " + item.FQC单号 }}
+                                </div>
+                            </div>
+                        </el-tab-pane>
+                    </el-tabs>
                 </div>
             </div>
             <div class="list">
-                <div class="l-bg" v-if="!isGetBill">
+                <div class="l-bg" v-if="!showMain">
                     <img src="../../assets/bg.png">
                 </div>
                 <div class="l-info" v-else>
@@ -80,16 +98,73 @@
         self.$router.go(-1);
     }
 
-    //**工单列表
-    //加载
-    const orderLoad = ref(false);
-    //表单
+    function onSelWz(obj:any) {
+        department.value = obj;
+        getFqcOrder();
+    }
+
+    //**表单
     const formSearch: any = ref({
         changeText: true,
         order: "",
     })
     //指定工单
     const inputGongdan = ref('');
+
+    //获取工单
+    function getFqcOrder() {
+        orderLoad.value = true;
+        idc.fqcSelect_post({
+            field: department.value
+        }).then((data: any) => {
+            fqcNumber.value = data;
+            orderLoad.value = false;
+        }).finally(() => {
+            orderLoad.value = false;
+        })
+    }
+
+    //查询
+    function selectFqcOrder() {
+        let ary1 = (fqcNumber.value.length ? fqcNumber.value.filter((param: any) => {
+            return param.FQC单号.match(new RegExp(formSearch.value.order))
+        }) : fqcNumber.value);
+        fqcNumber.value = ary1;
+    }
+
+    function reset() {
+        formSearch.value.order = '';
+        nowForm.value = '';
+        showMain.value = false;
+        getFqcOrder();
+    }
+
+    //**工单列表
+    //加载
+    const orderLoad = ref(false);
+    const fqcNumber: any = ref([])
+
+    function intoDrawing(item: any) {
+        showMain.value = true
+        nowForm.value = item;
+    }
+
+
+    //**工单详情
+    const showMain = ref(false)
+    const nowForm: any = ref({})
+
+
+    const department: any = ref('');
+
+    async function getLocalStore() {
+        department.value = localStorage.getItem("FQClocal");
+    }
+
+    onMounted(async () => {
+        await getLocalStore();
+        await getFqcOrder();
+    })
 </script>
 
 <style scoped lang="scss">
@@ -113,7 +188,7 @@
             }
 
             .op-form {
-                height: 250px;
+                height: 150px;
                 display: flex;
                 flex-direction: row;
                 padding: 10px;
@@ -122,7 +197,7 @@
                     margin-bottom: 2px;
 
                     .el-form-item__content {
-                        .el-input, .el-button {
+                        .el-input {
                             width: 140px;
                         }
                     }
@@ -130,17 +205,11 @@
                     .el-form-item__error {
                         display: none;
                     }
-
-                    &.ml {
-                        .el-form-item__content {
-                            margin-left: 70px !important;
-                        }
-                    }
                 }
             }
 
             .op-tab {
-                height: calc(100% - 250px);
+                height: calc(100% - 150px);
                 flex: 1;
 
                 ::v-deep .el-loading-spinner {
@@ -172,25 +241,7 @@
                         &.primary {
                             background-color: #ecf5ff;
                             border: 1px solid #d9ecff;
-                            color: #333;
-                        }
-
-                        &.success {
-                            background-color: $success;
-                            border: 1px solid $white;
-                            color: $white;
-                        }
-
-                        &.warning {
-                            background-color: #ecf5ff;
-                            border: 1px solid #d9ecff;
                             color: #409eff;
-                        }
-
-                        &.error {
-                            background-color: #8f99a3;
-                            border: 1px solid #000;
-                            color: #000;
                         }
                     }
                 }
@@ -198,7 +249,7 @@
         }
 
         .list {
-            width: 30%;
+            width: 100%;
             height: 100%;
             flex: 1;
 
