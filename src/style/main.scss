@@ -1,0 +1,108 @@
+@import "src/style/base";
+@import "src/style/_variables.scss";
+
+#app {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  font-weight: normal;
+}
+
+.mt10{
+  margin-top: 10px;
+}
+
+.mr10{
+  margin-right: 10px;
+}
+
+.mb10{
+  margin-bottom: 10px;
+}
+
+.ml10{
+  margin-left: 10px;
+}
+
+//颜色
+.primary{
+  color:$primary
+}
+
+.success{
+  color:$success
+}
+
+.danger{
+  color:$danger
+}
+
+.warning{
+  color:$warning
+}
+
+.successBtn{
+  border: 1px solid $success !important;
+  background-color: $success !important;
+  color:$white !important;
+}
+
+.primaryBtn{
+  border: 1px solid $primary !important;
+  background-color: $primary !important;
+  color:$white !important;
+}
+
+//滚动条
+.scrollBar {
+  overflow: overlay;
+
+  &::-webkit-scrollbar {
+    width: 12px;
+    height: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #C4C7CC;
+    border-radius: 10px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: rgba(196, 199, 204, .8);
+  }
+
+}
+
+//vxe 样式重置
+.vxe-grid {
+  &.is--loading:before {
+    background-color: rgba(255, 255, 255, .8) !important;
+  }
+  .vxe-toolbar {
+    border: 1px solid $table-bd;
+    border-bottom: 0 none;
+    padding: 0 10px;
+
+    .vxe-tools--operate {
+      .vxe-custom--wrapper {
+        .vxe-custom--option-wrapper {
+          .vxe-checkbox--icon {
+            top: 2px;
+          }
+        }
+      }
+    }
+  }
+  .vxe-cell--valid-msg{
+    //width: min-content;
+  }
+}
+
+.el-popover{
+  z-index: 9999 !important;
+}
