@@ -2,12 +2,24 @@
     <Layout :header="header" :footer="footer">
         <div class="home">
             <div class="body scrollBar">
-                <ul class="list">
-                    <li v-for="(n,i) in sysList" :key="i" @click="goto(n)">
-                        <div><img src="@/assets/logo.png"></div>
-                        <p>{{$t(n.name)}}</p>
-                    </li>
-                </ul>
+                <div>
+                    <el-divider content-position="left">{{$t('10270')}}</el-divider>
+                    <ul class="list clearfix">
+                        <li v-for="(n,i) in sysList" :key="i" @click="goto(n)">
+                            <div><img src="@/assets/logo.png"></div>
+                            <p>{{$t(n.name)}}</p>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <el-divider content-position="left">{{$t('10271')}}</el-divider>
+                    <ul class="list clearfix">
+                        <li v-for="(n,i) in zjList" :key="i" @click="goto(n)">
+                            <div><img src="@/assets/logo.png"></div>
+                            <p>{{$t(n.name)}}</p>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </Layout>
@@ -29,6 +41,11 @@
         //{name: '10210', path: '/material'},
     ]
 
+    const zjList:any[] = [
+        {name: '10097', path: '/fqc'},
+        {name: '10098', path: '/routing'},
+    ]
+
     function goto(n: { name: string, path: string }) {
         n.path ? self.$router.push({path: n.path}) : null;
     }
@@ -46,7 +63,7 @@
         .body {
             width: 100%;
             height: 100%;
-            padding: 40px 20px;
+            padding: 0 20px;
 
             .list {
                 > li {
@@ -68,8 +85,8 @@
                     }
 
                     > div {
-                        width: 200px;
-                        height: 200px;
+                        width: 150px;
+                        height: 150px;
                         background-color: $bg;
                         border: 1px solid $bd;
                         padding: 10px;

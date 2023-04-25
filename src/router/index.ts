@@ -7,7 +7,8 @@ import StartWork from '../views/StartWork/index.vue'
 import Import from '../views/Import/index.vue'
 import ReporWork from '../views/ReporWork/index.vue'
 import Material from '../views/Material/index.vue'
-
+import Fqc from '../views/Fqc/index.vue'
+import Routing from '../views/Routing/index.vue'
 
 Vue.use(VueRouter)
 
@@ -22,6 +23,9 @@ const router = new VueRouter({
     {path: '/import', name: 'import', component: Import},
     {path: '/reporWork', name: 'reporWork', component: ReporWork},
     {path: '/material', name: 'material', component: Material},
+    {path: '/material', name: 'material', component: Material},
+    {path: '/fqc', name: 'fqc', component: Fqc},
+    {path: '/routing', name: 'routing', component: Routing},
     // {
     //   path: '/about',
     //   name: 'about',

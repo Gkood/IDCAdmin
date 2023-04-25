@@ -817,7 +817,7 @@
             }
 
             .op-tab {
-                height: 100%;
+                height: calc(100% - 250px);
                 flex: 1;
 
                 ::v-deep .el-loading-spinner {
