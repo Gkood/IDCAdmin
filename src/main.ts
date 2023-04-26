@@ -26,8 +26,10 @@ Vue.prototype._ = _;
 //全局组件注册
 import Layout from './layout/Layout.vue'
 import IdcOpen from './components/IdcOpen.vue'
+import IdcDrawer from './components/IdcDrawer.vue'
 Vue.component('Layout', Layout)
 Vue.component('IdcOpen', IdcOpen)
+Vue.component('IdcDrawer', IdcDrawer)
 
 Vue.use(PiniaVuePlugin)
 

@@ -15,3 +15,7 @@ export const backDate_post = (data: any) => request({url: 'http://172.16.8.18:68
 export const comeBackWork_post = (data: any) => request({url: 'http://172.16.8.18:6820/conex/comeBackWork', method: 'post', data})
 export const batch_post = (data: any) => request({url: 'http://172.16.8.18:6820/conex/batch', method: 'post', data})
 export const fqcSelect_post = (data: any) => request({url: 'http://172.16.8.18:6820/conex/fqcSelect', method: 'post', data})
+export const getFqcListBody_post = (data: any) => request({url: 'http://172.16.8.18:6820/conex/getFqcListBody', method: 'post', data})
+export const saveDetail_post = (data: any) => request({url: 'http://172.16.8.18:6820/conex/saveDetail', method: 'post', data})
+export const nameSelect_post = (data: any) => request({url: 'http://172.16.8.18:6820/conex/nameSelect', method: 'post', data})
+export const saveFQCRecord_post = (data: any) => request({url: 'http://172.16.8.18:6820/conex/saveFQCRecord', method: 'post', data})

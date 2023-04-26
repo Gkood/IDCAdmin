@@ -68,12 +68,12 @@
   }
 
   &::-webkit-scrollbar-thumb {
-    background: #C4C7CC;
+    background: rgba(196, 199, 204, .6);
     border-radius: 10px;
   }
 
   &::-webkit-scrollbar-thumb:hover {
-    background: rgba(196, 199, 204, .8);
+    background: rgba(196, 199, 204, .95);
   }
 
 }
