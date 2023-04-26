@@ -9,7 +9,6 @@ import requireTransform from 'vite-plugin-require-transform';
 // https://vitejs.dev/config/
 export default ({mode}: any) => {
     const env = loadEnv(mode, process.cwd());
-    console.log(env)
     return defineConfig({
         server: {
             https: false, //(使用https)启用 TLS + HTTP/2。注意：当 server.proxy 选项 也被使用时，将会仅使用 TLS

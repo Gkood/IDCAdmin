@@ -51,7 +51,6 @@ service.interceptors.response.use(
         return Promise.resolve(response.data)
     },
     (error) => {
-        //console.log(error)
         let obj: any = {
             401: async () => {//认证失败，无法访问系统资源
 
