@@ -347,6 +347,8 @@
                             await filterGD(data.state.msg);
                         }
                         orderLoad.value = false;
+                    }).finally(()=>{
+                        orderLoad.value = false;
                     })
                 } else {
                     idc.getWorkOrderList_post(formSearch.value).then(async (data: any) => {
@@ -355,6 +357,8 @@
                         } else {
                             await filterGD(data.state.msg);
                         }
+                        orderLoad.value = false;
+                    }).finally(()=>{
                         orderLoad.value = false;
                     })
                 }
