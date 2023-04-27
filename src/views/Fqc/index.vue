@@ -20,7 +20,7 @@
                         <el-form-item :label="$t('10276')">
                             <el-input v-model="formSearch.order"
                                       :placeholder="$t('10312')"
-                                      @keyup.enter.native="searchFor"></el-input>
+                                      @keyup.enter.native="selectFqcOrder"></el-input>
                         </el-form-item>
                         <el-form-item label-width="40px">
                             <el-button @click="selectFqcOrder" type="primary">{{$t('10043')}}</el-button>

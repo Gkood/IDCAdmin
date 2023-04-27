@@ -19,3 +19,7 @@ export const getFqcListBody_post = (data: any) => request({url: 'http://172.16.8
 export const saveDetail_post = (data: any) => request({url: 'http://172.16.8.18:6820/conex/saveDetail', method: 'post', data})
 export const nameSelect_post = (data: any) => request({url: 'http://172.16.8.18:6820/conex/nameSelect', method: 'post', data})
 export const saveFQCRecord_post = (data: any) => request({url: 'http://172.16.8.18:6820/conex/saveFQCRecord', method: 'post', data})
+export const inspectionSite_post = (data: any) => request({url: 'http://127.0.0.1:6820/conex/inspectionSite', method: 'post', data})
+export const inspectionOrder_post = (data: any) => request({url: 'http://127.0.0.1:6820/conex/inspectionOrder', method: 'post', data})
+export const selectToInspection_6820_post = (data: any) => request({url: 'http://127.0.0.1:6820/conex/selectToInspection', method: 'post', data})
+export const testByOther_post = (data: any) => request({url: 'http://127.0.0.1:6820/conex/testByOther', method: 'post', data})
