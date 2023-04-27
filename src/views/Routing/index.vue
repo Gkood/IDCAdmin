@@ -151,7 +151,7 @@
     //**工单列表
     //加载
     const orderLoad = ref(false);
-    const site: any = ref([{}])
+    const site: any = ref([])
 
     function siteDetail(x: any) {
         showMain.value = true;

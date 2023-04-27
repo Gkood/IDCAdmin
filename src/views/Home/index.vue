@@ -67,6 +67,7 @@
 
             .list {
                 > li {
+                    width: 150px;
                     float: left;
                     margin: 0 20px 20px 0;
                     transition-duration: .5s;
