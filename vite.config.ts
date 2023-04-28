@@ -43,7 +43,7 @@ export default ({mode}: any) => {
                 additionalLegacyPolyfills: ['regenerator-runtime/runtime']
             }),
             requireTransform({
-                fileRegex:/.ts$|.tsx$|.vue$/
+                fileRegex: /.ts$|.tsx$|.vue$/
             })
         ],
         resolve: {
@@ -58,6 +58,7 @@ export default ({mode}: any) => {
                 }
             }
         },
-        define: {'process.env': {}}
+        define: {'process.env': {}},
+        base: env.VITE_BASE_URL
     })
 }

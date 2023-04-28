@@ -14,7 +14,7 @@ Vue.use(VueRouter)
 
 const router = new VueRouter({
   mode: 'history',
-  base: import.meta.env.BASE_URL,
+  base: import.meta.env.VITE_BASE_URL,
   routes: [
     {path: '/', name: 'home', component: Home},
     {path: '/capacity', name: 'capacity', component: Capacity},
