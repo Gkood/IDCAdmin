@@ -879,7 +879,7 @@
         }
 
         .list {
-            width: 100%;
+            width: calc(100% - 360px);
             height: 100%;
             flex: 1;
 
@@ -903,6 +903,7 @@
             }
 
             .l-info {
+                width: 100%;
                 height: 100%;
 
                 .l-i-h {
