@@ -34,7 +34,7 @@
     const languageZH: any = {
         'zh': '简体中文',
         'en': 'English',
-        'vi': 'ภาษาไทย',
+        'vi': 'Tiếng Việt',
         'es': 'Español'
     }
 
