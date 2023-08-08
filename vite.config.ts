@@ -16,24 +16,7 @@ export default ({mode}: any) => {
             //port: 8080, //指定开发服务器端口：默认3000
             open: false, //启动时自动在浏览器中打开
             cors: false, //为开发服务器配置 CORS
-            proxy: {
-                //配置自定义代理规则
-                [env.VITE_API_CAPACITY_ARRANGE]: {
-                    target: env.VITE_PATH_CAPACITY,
-                    changeOrigin: true, //是否跨域
-                    rewrite: path => path.replace(/^\/api/, '')
-                },
-                [env.VITE_API_CONEX]: {
-                    target: env.VITE_PATH_CONEX,
-                    changeOrigin: true, //是否跨域
-                    rewrite: path => path.replace(/^\/api/, '')
-                },
-                [env.VITE_API_TOYH]: {
-                    target: env.VITE_PATH_TOYH,
-                    changeOrigin: true, //是否跨域
-                    rewrite: path => path.replace(/^\/api/, '')
-                }
-            }
+            proxy: {}
         },
         plugins: [
             vue2(),

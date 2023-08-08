@@ -271,7 +271,7 @@
         {value: "总装科", label: '10198'},
     ])
     const fullloading = ref(false);
-    const uploadUrl = ref('http://192.168.80.52:7825/capacity_arrange/uploadFile')
+    const uploadUrl = ref(import.meta.env.VITE_PATH_8083 + '/capacity_arrange/uploadFile')
 
     //列表数据
     const tableDataF: any = ref([
