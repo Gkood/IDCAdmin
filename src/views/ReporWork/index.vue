@@ -357,27 +357,39 @@
             ScrapNo: formBatch.value.SCRAPQTY
         }).then((data: any) => {
             if (data.state.code == 200) {
-                idc.batch_post({
-                    order: formBatch.value.MNR,
-                    process: JSON.stringify(selfData.value)
-                }).then((res: any) => {
-                    fullscreenLoading.value = false;
-                    localdata.value = formBatch.value.MNR;
-                    if (res.state.code == 200) {
-                        //数据存本地
-                        Storagelocal();
-                        //提示成功信息
-                        self.$message({
-                            message: self.$t('10251'),
-                            type: 'success',
-                            center: true
-                        });
-                        //刷新
-                        sx();
-                    } else if (res.state.code == 10500) {
-                        self.$message.error(self.$t('10167') + ',' + res.state.msg + ',' + self.$t('10168'));
-                    }
-                })
+                fullscreenLoading.value = false;
+                localdata.value = formBatch.value.MNR;
+                //数据存本地
+                Storagelocal();
+                //提示成功信息
+                self.$message({
+                    message: self.$t('10251'),
+                    type: 'success',
+                    center: true
+                });
+                //刷新
+                //sx();
+                // idc.batch_post({
+                //     order: formBatch.value.MNR,
+                //     process: JSON.stringify(selfData.value)
+                // }).then((res: any) => {
+                //     fullscreenLoading.value = false;
+                //     localdata.value = formBatch.value.MNR;
+                //     if (res.state.code == 200) {
+                //         //数据存本地
+                //         Storagelocal();
+                //         //提示成功信息
+                //         self.$message({
+                //             message: self.$t('10251'),
+                //             type: 'success',
+                //             center: true
+                //         });
+                //         //刷新
+                //         sx();
+                //     } else if (res.state.code == 10500) {
+                //         self.$message.error(self.$t('10167') + ',' + res.state.msg + ',' + self.$t('10168'));
+                //     }
+                // })
             } else if (data.state.code == 10500) {
                 fullscreenLoading.value = false;
                 self.$message.error(self.$t('10167') + ',' + data.state.msg + ',' + self.$t('10168'));
