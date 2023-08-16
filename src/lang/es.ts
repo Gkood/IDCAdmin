@@ -310,6 +310,9 @@ export default {
     10309: 'Por favor, introduzca el número de lote',
     10310: 'No calificado',
     10311: 'Calificado',
-    10312: 'Por favor, introduzca el número de lista'
-
+    10312: 'Por favor, introduzca el número de lista',
+    10326: 'Plan para esta semana',
+    10327: 'Transferencia pendiente la semana pasada',
+    10328: 'Plan',
+    10329: 'Real',
 }

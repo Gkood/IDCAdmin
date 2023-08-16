@@ -34,10 +34,10 @@
 
     const sysList: any[] = [
         //{name: '10207', path: '/capacity'},
+        {name: '10209', path: '/import'},
         {name: '10195', path: '/paigong'},
         {name: '10208', path: '/startWork'},
         {name: '10242', path: '/reporWork'},
-        {name: '10209', path: '/import'},
         //{name: '10210', path: '/material'},
     ]
 

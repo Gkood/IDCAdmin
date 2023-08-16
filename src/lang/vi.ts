@@ -310,6 +310,10 @@ export default {
     10309: 'Vui lòng nhập số lô',
     10310: 'Không đủ tiêu chuẩn',
     10311: 'Chứng nhận',
-    10312: 'Vui lòng nhập số đơn'
+    10312: 'Vui lòng nhập số đơn',
+    10326: 'Kế hoạch tuần này',
+    10327: 'Tuần trước chưa chuyển',
+    10328: 'Kế hoạch',
+    10329: 'Thực tế',
 
 }

@@ -310,7 +310,10 @@ export default {
     10309: 'Please enter the batch number',
     10310: 'unqualified',
     10311: 'qualified',
-    10312: 'Please enter the tracking number'
-
+    10312: 'Please enter the tracking number',
+    10326: 'this week plan',
+    10327: "Last week's unfinished transfer",
+    10328: 'plan',
+    10329: 'reality',
 
 }

@@ -51,19 +51,59 @@
                                 :loading="loadingF"
                                 :data="tableDataF">
                             <vxe-column field="customer" :title="$t('10221')"></vxe-column>
-                            <vxe-column field="orderDate" :title="$t('10223')"></vxe-column>
-                            <vxe-column field="work_order" :title="$t('10016')"></vxe-column>
-                            <vxe-column field="part_number" :title="$t('10017')"></vxe-column>
-                            <vxe-column field="one" :title="$t('10224')"></vxe-column>
+                            <vxe-column field="orderDate" :title="$t('10223')" width="60"></vxe-column>
+                            <vxe-column field="work_order" :title="$t('10016')" width="60"></vxe-column>
+                            <vxe-column field="part_number" :title="$t('10017')" width="60"></vxe-column>
+                            <vxe-column field="one" :title="$t('10224')" width="60"></vxe-column>
+                            <vxe-column field="one" :title="$t('10202')"></vxe-column>
                             <vxe-column field="name_specification" :title="$t('10019')"></vxe-column>
-                            <vxe-column field="two" :title="$t('10021')"></vxe-column>
+                            <vxe-column field="one" :title="$t('10020')"></vxe-column>
+                            <vxe-column field="two" :title="$t('10021')" width="60"></vxe-column>
+                            <vxe-column field="one" :title="$t('10022')" width="60"></vxe-column>
                             <vxe-column field="three" :title="$t('10023')"></vxe-column>
                             <vxe-column field="spare_parts" :title="$t('10225')"></vxe-column>
-                            <vxe-column field="work_order_count" :title="$t('10226')"></vxe-column>
-                            <vxe-column field="arrange_amount" :title="$t('10217')"></vxe-column>
-                            <vxe-column field="week_amount" :title="$t('10027')"></vxe-column>
+                            <vxe-column field="one" :title="$t('10024')" width="60"></vxe-column>
+                            <vxe-column field="one" :title="$t('10025')" width="60"></vxe-column>
+                            <vxe-column field="one" :title="$t('10026')"></vxe-column>
+                            <vxe-column field="one" :title="$t('10027')" width="65"></vxe-column>
+                            <vxe-column field="one" :title="$t('10028')" width="60"></vxe-column>
+                            <vxe-column field="one" :title="$t('10029')"></vxe-column>
                             <vxe-column field="week_finash_amount" :title="$t('10030')"></vxe-column>
                             <vxe-column field="finash_rate" :title="$t('10031')"></vxe-column>
+                            <vxe-colgroup :title="$t('10326')">
+                                <vxe-colgroup :title="$t('10327')">
+                                    <vxe-column field="one" :title="$t('10328')"></vxe-column>
+                                    <vxe-column field="one" :title="$t('10329')"></vxe-column>
+                                </vxe-colgroup>
+                                <vxe-colgroup :title="m().weekday(1).format('YYYY/M/D')">
+                                    <vxe-column field="one" :title="$t('10328')"></vxe-column>
+                                    <vxe-column field="one" :title="$t('10329')"></vxe-column>
+                                </vxe-colgroup>
+                                <vxe-colgroup :title="m().weekday(2).format('YYYY/M/D')">
+                                    <vxe-column field="one" :title="$t('10328')"></vxe-column>
+                                    <vxe-column field="one" :title="$t('10329')"></vxe-column>
+                                </vxe-colgroup>
+                                <vxe-colgroup :title="m().weekday(3).format('YYYY/M/D')">
+                                    <vxe-column field="one" :title="$t('10328')"></vxe-column>
+                                    <vxe-column field="one" :title="$t('10329')"></vxe-column>
+                                </vxe-colgroup>
+                                <vxe-colgroup :title="m().weekday(4).format('YYYY/M/D')">
+                                    <vxe-column field="one" :title="$t('10328')"></vxe-column>
+                                    <vxe-column field="one" :title="$t('10329')"></vxe-column>
+                                </vxe-colgroup>
+                                <vxe-colgroup :title="m().weekday(5).format('YYYY/M/D')">
+                                    <vxe-column field="one" :title="$t('10328')"></vxe-column>
+                                    <vxe-column field="one" :title="$t('10329')"></vxe-column>
+                                </vxe-colgroup>
+                                <vxe-colgroup :title="m().weekday(6).format('YYYY/M/D')">
+                                    <vxe-column field="one" :title="$t('10328')"></vxe-column>
+                                    <vxe-column field="one" :title="$t('10329')"></vxe-column>
+                                </vxe-colgroup>
+                                <vxe-colgroup :title="m().weekday(7).format('YYYY/M/D')">
+                                    <vxe-column field="one" :title="$t('10328')"></vxe-column>
+                                    <vxe-column field="one" :title="$t('10329')"></vxe-column>
+                                </vxe-colgroup>
+                            </vxe-colgroup>
                         </vxe-table>
                     </div>
                 </el-tab-pane>
@@ -276,68 +316,20 @@
     //列表数据
     const tableDataF: any = ref([
         {
-            customer: "空行",
-            orderDate: '',
-            work_order: "",
-            part_number: "",
-            name_specification: "",
-            spare_parts: "",
-            work_order_count: "",
-            arrange_amount: "",
-            week_amount: "",
-            week_finash_amount: "",
-            finash_rate: "",
-            one: '',
-            two: '',
-            three: ''
-        },
-        {
-            customer: "空行",
-            orderDate: '',
-            work_order: "",
-            part_number: "",
-            name_specification: "",
-            spare_parts: "",
-            work_order_count: "",
-            arrange_amount: "",
-            week_amount: "",
-            week_finash_amount: "",
-            finash_rate: "",
-            one: '',
-            two: '',
-            three: ''
-        },
-        {
-            customer: "MRC",
-            orderDate: '7月26日',
-            work_order: "3MW1-21010537",
-            part_number: "32101000596",
-            name_specification: "MRC阀体 1/4 ODS×FL TWO WAY",
-            spare_parts: "411",
-            work_order_count: "411",
-            arrange_amount: "411",
-            week_amount: "411",
-            week_finash_amount: "0725",
-            finash_rate: "0725",
-            one: '3SO1-22050033-5',
-            two: '1,2',
-            three: '5'
-        },
-        {
-            customer: "......",
-            orderDate: '.......',
-            work_order: "......",
-            part_number: "......",
-            name_specification: "......",
-            spare_parts: "......",
-            work_order_count: "......",
-            arrange_amount: "......",
-            week_amount: "......",
-            week_finash_amount: "......",
-            finash_rate: "......",
-            one: '......',
-            two: '......',
-            three: '......'
+            customer: "...",
+            orderDate: '...',
+            work_order: "...",
+            part_number: "...",
+            name_specification: "...",
+            spare_parts: "...",
+            work_order_count: "...",
+            arrange_amount: "...",
+            week_amount: "...",
+            week_finash_amount: "...",
+            finash_rate: "...",
+            one: '...',
+            two: '...',
+            three: '...'
         }])
 
     //下载模板
@@ -555,8 +547,8 @@
         ::v-deep .vxe-table {
             .vxe-header--row {
                 .vxe-header--column {
-                    line-height: 14px;
-                    padding: 1px 0;
+                    /*line-height: 14px;*/
+                    /*padding: 1px 0;*/
 
                     .vxe-cell {
                         padding: 0 1px;
@@ -568,8 +560,8 @@
             }
 
             .vxe-body--column {
-                line-height: 12px;
-                padding: 1px 0 !important;
+                /*line-height: 12px;*/
+                /*padding: 1px 0 !important;*/
 
                 .vxe-cell {
                     padding: 0 2px;
