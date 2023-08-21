@@ -3,7 +3,8 @@
         <Header v-if="header.show" :header="header"/>
         <div class="layout-body">
             <div class="l-back" v-if="tool.show">
-                <el-button icon="el-icon-back" v-if="tool.backShow" @click="back">{{$t('10060')}}</el-button>
+<!--                <el-button icon="el-icon-back" v-if="tool.backShow" @click="back">{{$t('10060')}}</el-button>-->
+                <div></div>
                 <div class="l-tool">
                     <Department v-if="tool.department.data.length"
                                 :department="tool.department"

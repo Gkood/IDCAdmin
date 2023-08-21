@@ -97,7 +97,7 @@
     const sys = useSys()
 
     //组件参数
-    const header: any = {show: true, title: '10208'}
+    const header: any = {show: true, title: '10208',back:true}
     const footer: any = {show: true}
 
     //**表单

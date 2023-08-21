@@ -305,7 +305,7 @@
     const sys = useSys()
 
     //组件参数
-    const header: any = {show: true, title: '10195'}
+    const header: any = {show: true, title: '10195',back:true}
     const footer: any = {show: true}
 
     //**工单列表

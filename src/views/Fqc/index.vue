@@ -152,11 +152,10 @@
     const sys = useSys()
 
     //组件参数
-    const header: any = {show: true, title: '10274'}
+    const header: any = {show: true, title: '10274',back:true}
     const footer: any = {show: true}
     const hTool: any = {
         show: true,
-        backShow: true,
         department: {
             data: [
                 {label: '机加一科', value: 'J52210'},

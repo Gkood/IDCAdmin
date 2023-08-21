@@ -211,7 +211,7 @@
     const sys = useSys()
 
     //组件参数
-    const header: any = {show: true, title: '10242', timer: true}
+    const header: any = {show: true, title: '10242', timer: true,back:true}
     const footer: any = {show: false}
 
     //背景色

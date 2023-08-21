@@ -240,7 +240,10 @@
                             <vxe-colgroup :title="$t('10032')">
                                 <vxe-column v-for="(r,i) in array" :key="i"
                                             :field="r.field"
-                                            :title="r.title" width="90"></vxe-column>
+                                            :title="r.title"
+                                            :formatter=formatter
+                                            width="90">
+                                </vxe-column>
                             </vxe-colgroup>
                             <vxe-column :title="$t('10231')"
                                         width="180"
@@ -290,7 +293,7 @@
     const sys = ref(useSys())
 
     //组件参数
-    const header: any = {show: true, title: '10209'}
+    const header: any = {show: true, title: '10209',back:true}
     const footer: any = {show: false}
 
     //**导入模块
@@ -451,6 +454,10 @@
             tableDataS.value = data.state.msg;
             loadingS.value = false;
         })
+    }
+
+    function formatter(obj:any) {
+        return obj.cellValue?obj.cellValue.replace(/[^0-9]/ig,""):obj.cellValue;
     }
 
     function editRowEvent(row: any) {

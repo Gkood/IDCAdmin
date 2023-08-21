@@ -1,7 +1,6 @@
 <template>
     <Layout :header="header"
             :footer="footer"
-            :tool="hTool"
             @on-back="back">
         <div class="routing">
             <div :class="['op','scrollBar',isExpand?'isExpand':null]">
@@ -110,15 +109,8 @@
     const sys = useSys()
 
     //组件参数
-    const header: any = {show: true, title: '10098'}
+    const header: any = {show: true, title: '10098',back:true}
     const footer: any = {show: true}
-    const hTool: any = {
-        show: true,
-        backShow: true,
-        department: {
-            data: []
-        }
-    }
 
     function back() {
         self.$router.go(-1);
